@@ -1,0 +1,28 @@
+﻿@model Autores.Models.ViewModels.AutorViewModel
+@{
+    ViewBag.Title = "Editar Autores";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Update", "Autor", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(a => a.id)
+            @Html.LabelFor(a => a.nombre)
+            @Html.TextBoxFor(a => a.nombre, "", new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(a => a.nombre, null, new { @class = "danger" })<br />
+            @Html.LabelFor(a => a.nacionalidad)
+            @Html.TextBoxFor(a => a.nacionalidad, "", new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(a => a.nacionalidad, null, new { @class = "danger" })<br />
+
+            <div style="text-align:right;">
+                <input type="submit" class="btn btn-primary" value="Guardar" />
+            </div>
+
+        </div>
+    </div>
+}
+
+

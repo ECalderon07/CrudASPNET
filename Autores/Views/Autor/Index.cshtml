@@ -1,0 +1,37 @@
+﻿@model List<Autores.Models.ViewModels.AutorViewModel>
+@{
+    ViewBag.Title = "Autores";
+}
+
+<h2>@ViewBag.Title </h2>
+<div class="row" style="text-align:right;padding:5px;">
+    <a class="btn btn-primary" href="~/Autor/Add">
+        Nuevo
+    </a>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Nacionalidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var element in Model)
+            {
+                <tr>
+                    <td>@element.id</td>
+                    <td>@element.nombre</td>
+                    <td>@element.nacionalidad</td>
+                    <td>
+                        <a href="~/Autor/Update/@element.id" class="btn btn-success">Editar</a>
+                        <a href="~/Autor/Delete/@element.id" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
