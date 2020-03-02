@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace Autores.Controllers
 {
@@ -90,7 +91,7 @@ namespace Autores.Controllers
                         autor.nombre = model.nombre;
                         autor.nacionalidad = model.nacionalidad;
 
-                        db.Entry(autor).State = System.Data.Entity.EntityState.Modified;
+                        db.Entry(autor).State = EntityState.Modified;
                         db.SaveChanges();
                     }
                     return Redirect("~/Autor/");
